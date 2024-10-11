@@ -43,6 +43,7 @@ The dataset contains 12 attributes that are crucial for heart disease prediction
 - **Gated Recurrent Unit (GRU)**
 - **Long Short-Term Memory (LSTM)**
 - **MultiLayer Perceptron (MLP)**
+- **Simple RNN (RNN)**
 - **Ensemble Hybrid Model**
 
 ## Results
