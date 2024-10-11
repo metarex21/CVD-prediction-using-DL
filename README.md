@@ -1,13 +1,42 @@
 # DL Methods for Early CVD Prediction
 
 ## Abstract
-Cardiovascular disease (CVD) remains a leading cause of mortality worldwide, emphasizing the critical need for early prediction and intervention. This project explores the development and evaluation of deep learning models to predict the risk of cardiovascular disease using a comprehensive dataset. The dataset includes various health parameters such as age, gender, blood pressure, cholesterol levels, and lifestyle habits. Extensive data preprocessing was performed, including handling missing values, normalization, and feature selection. 
+Cardiovascular disease (CVD) is a leading cause of death globally, making early prediction critical for timely interventions. This project develops deep learning models to predict CVD risk using health data, including age, blood pressure, cholesterol levels, and lifestyle factors. We implemented five models: Artificial Neural Network (ANN), Gated Recurrent Unit (GRU), Long Short-Term Memory (LSTM), MultiLayer Perceptron (MLP), and an ensemble hybrid model. Extensive preprocessing, including normalization and feature selection, was conducted. The models were evaluated based on accuracy, precision, recall, F1-score, and AUC, with the ensemble model achieving the best performance.
 
-We implemented and compared the performance of five deep learning models: Artificial Neural Network (ANN), Gated Recurrent Unit (GRU), Long Short-Term Memory (LSTM), MultiLayer Perceptron (MLP), and a hybrid model by ensemble methods. The models were evaluated based on metrics such as accuracy, precision, recall, F1-score, and the area under the curve (AUC). 
+**Keywords:** CVD, Deep Learning, ANN, LSTM, GRU, MLP, Ensemble
 
-Our results indicate that the hybrid ensemble model outperforms the others, achieving an accuracy of 94.55% in predicting CVD. The study demonstrates that deep learning models, particularly those capable of capturing temporal dependencies, can be highly effective in early CVD prediction. This approach offers a non-invasive, efficient, and accurate tool for assessing cardiovascular risk, potentially enabling timely medical interventions and reducing the global burden of cardiovascular diseases.
+## Dataset
 
-**Keywords:** Cardiovascular Disease (CVD), Deep Learning, ANN, LSTM, GRU, MLP, Ensemble methods
+The **Heart Failure Prediction Dataset**, compiled by Fedesoriano, is a comprehensive amalgamation of previously disparate datasets to create a unified resource for cardiovascular research. The dataset encompasses five distinct sources:
+
+| **Dataset**     | **Observations** |
+|-----------------|------------------|
+| Cleveland       | 303              |
+| Hungarian       | 294              |
+| Switzerland     | 123              |
+| Long Beach VA   | 200              |
+| Stalog (Heart)  | 270              |
+
+In total, these datasets contribute 1190 observations. After removing duplicated entries (272 observations), the resultant dataset comprises 918 unique observations. This is the largest heart disease dataset available for research and is publicly accessible via the UCI Machine Learning Repository.
+
+### Attribute Information
+
+The dataset contains 12 attributes that are crucial for heart disease prediction:
+
+| **Attribute**       | **Description**                                          | **Values**                        |
+|---------------------|----------------------------------------------------------|-----------------------------------|
+| Age                 | Age of the patient (years)                               | Numeric value                    |
+| Sex                 | Sex of the patient                                       | M: Male, F: Female                |
+| ChestPainType       | Type of chest pain                                       | TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic |
+| RestingBP           | Resting blood pressure (mm Hg)                           | Numeric value                    |
+| Cholesterol         | Serum cholesterol (mm/dl)                                | Numeric value                    |
+| FastingBS           | Fasting blood sugar                                      | 1: if FastingBS > 120 mg/dl, 0: otherwise |
+| RestingECG          | Resting electrocardiogram results                        | Normal, ST: ST-T wave abnormality, LVH: left ventricular hypertrophy |
+| MaxHR               | Maximum heart rate achieved (between 60 and 202)         | Numeric value                    |
+| ExerciseAngina      | Exercise-induced angina                                  | Y: Yes, N: No                    |
+| Oldpeak             | ST depression induced by exercise relative to rest       | Numeric value                    |
+| ST Slope            | The slope of the peak exercise ST segment                | Up: upsloping, Flat: flat, Down: downsloping |
+| HeartDisease        | Output class                                             | 1: heart disease, 0: Normal       |
 
 ## Models Evaluated
 - **Artificial Neural Network (ANN)**
@@ -17,6 +46,8 @@ Our results indicate that the hybrid ensemble model outperforms the others, achi
 - **Ensemble Hybrid Model**
 
 ## Results
+The table below highlights the performance of each model:
+
 | Metric       | ANN    | GRU    | LSTM   | MLP    | RNN    | Final Ensemble |
 |--------------|--------|--------|--------|--------|--------|----------------|
 | **Accuracy** | 94.01% | 92.16% | 92.48% | 92.37% | 94.12% | **94.55%**     |
